@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import os.path
 
@@ -22,7 +22,7 @@ dasch_transforms = {\
 def test_dasch_basis_sets_cache():
     n = 121
 
-    for method in dasch_transforms.keys():
+    for method in list(dasch_transforms.keys()):
         file_name = os.path.join(DATA_DIR, "{}_basis_{}_{}.npy".
                                  format(method, n, n))
 
@@ -43,7 +43,7 @@ def test_dasch_shape():
     n = 21
     x = np.ones((n, n), dtype='float32')
 
-    for method in dasch_transforms.keys():
+    for method in list(dasch_transforms.keys()):
        recon = dasch_transforms[method](x, direction='inverse')
        assert recon.shape == (n, n) 
 
@@ -52,7 +52,7 @@ def test_dasch_zeros():
     n = 21
     x = np.zeros((n, n), dtype='float32')
 
-    for method in dasch_transforms.keys():
+    for method in list(dasch_transforms.keys()):
         recon = dasch_transforms[method](x, direction="inverse")
         assert_allclose(recon, 0)
 
@@ -70,7 +70,7 @@ def test_dasch_1d_gaussian(n=101):
 
     orig = gauss(r, 0, sigma)
 
-    for method in dasch_transforms.keys():
+    for method in list(dasch_transforms.keys()):
         orig_copy = orig.copy()
 
         recon = dasch_transforms[method](orig)
@@ -99,7 +99,7 @@ def test_dasch_cyl_gaussian(n=101):
     ospeed = abel.tools.vmi.angular_integration(Q0_copy, origin=(0, 0))
 
     # dasch method inverse Abel transform
-    for method in dasch_transforms.keys():
+    for method in list(dasch_transforms.keys()):
         Q0_copy = Q0.copy()
         AQ0 = dasch_transforms[method](Q0)
         ratio_2d = np.sqrt(np.pi)*sigma

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from __future__ import division
+
 import numpy as np
 from scipy import ndimage
 from scipy.interpolate import UnivariateSpline

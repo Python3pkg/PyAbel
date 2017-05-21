@@ -30,10 +30,10 @@ try:
 except ImportError:
     _cython_installed = False
     build_ext = object # just avoid a syntax error in TryBuildExt, this is not used anyway
-    print('='*80)
+    print(('='*80))
     print('Warning: Cython extensions will not be built as Cython is not installed!\n'\
           '         This means that the abel.direct C implementation will not be available.')
-    print('='*80)
+    print(('='*80))
 
 
 

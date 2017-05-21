@@ -110,7 +110,7 @@ def guss_gaussian(x):
     c_guess = (x[0] + x[-1]) / 2
     a_guess = x.max() - c_guess
     mu_guess = x.argmax()
-    x_inter = interp1d(range(len(x)), x)
+    x_inter = interp1d(list(range(len(x))), x)
 
     def _(i):
         return x_inter(i) - a_guess / 2 - c_guess

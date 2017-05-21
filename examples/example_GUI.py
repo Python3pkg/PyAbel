@@ -7,8 +7,8 @@ import abel
 
 import sys
 if sys.version_info[0] < 3:
-    import Tkinter as tk
-    from tkFileDialog import askopenfilename
+    import tkinter as tk
+    from tkinter.filedialog import askopenfilename
 else:
     import tkinter as tk
     from tkinter.filedialog import askopenfilename
@@ -282,8 +282,8 @@ class PyAbel:  #(tk.Tk):
 
 
     def _onclick(self,event):
-        print('button={:d}, x={:f}, y={:f}, xdata={:f}, ydata={:f}'.format(
-        event.button, event.x, event.y, event.xdata, event.ydata))
+        print(('button={:d}, x={:f}, y={:f}, xdata={:f}, ydata={:f}'.format(
+        event.button, event.x, event.y, event.xdata, event.ydata)))
 
 
     # call back functions -----------------------

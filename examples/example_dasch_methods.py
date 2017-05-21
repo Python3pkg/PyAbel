@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
+
+
+
 
 """example_dasch_methods.py.
 """
@@ -36,7 +36,7 @@ dasch_transform = {\
 "three_point": abel.dasch.three_point_transform, 
 "onion_peeling": abel.dasch.onion_peeling_transform}
 
-for method in dasch_transform.keys():
+for method in list(dasch_transform.keys()):
     Q0 = Q[0].copy()
 # method inverse Abel transform
     AQ0 = dasch_transform[method](Q0, basis_dir='bases')

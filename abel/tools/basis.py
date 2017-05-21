@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
+
+
+
+
 
 import os.path
 import numpy as np
@@ -54,7 +54,7 @@ def get_bs_cached(method, cols, basis_dir='.', basis_options=dict(),
         "two_point": abel.dasch._bs_two_point
     }
 
-    if method not in basis_generator.keys():
+    if method not in list(basis_generator.keys()):
         raise ValueError("basis generating function for method '{}' not know"
                          .format(method))
 
@@ -65,7 +65,7 @@ def get_bs_cached(method, cols, basis_dir='.', basis_options=dict(),
     if method == "linbasex": 
        # Fix Me! not a simple unique naming mechanism
         for key in ['legendre_orders', 'proj_angles', 'radial_step', 'clip']:
-            if key in basis_options.keys():
+            if key in list(basis_options.keys()):
                 if key == 'legendre_orders':
                     value = ''.join(map(str, basis_options[key]))
                 elif key == 'proj_angles':

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
+
+
+
+
 
 import numpy as np
 import abel
@@ -272,7 +272,7 @@ def _Slices(Beta, legendre_orders, smoothing=0.5):
 
     pol = len(legendre_orders)
     NP = len(Beta[0])  # number of points in 3_d plot.
-    index = range(NP)
+    index = list(range(NP))
 
     Beta_convol = np.zeros((pol, NP))
     Slice_3D = np.zeros((pol, 2*NP, 2*NP))
@@ -333,7 +333,7 @@ def int_beta(Beta, radial_step=1, threshold=0.1, regions=None):
 
     for j, reg in enumerate(regions):
         for i in range(pol):
-            Beta_int[i, j] = np.sum(Beta_n[i, range(*reg)])/(reg[1]-reg[0])
+            Beta_int[i, j] = np.sum(Beta_n[i, list(range(*reg))])/(reg[1]-reg[0])
 
     return Beta_int
 

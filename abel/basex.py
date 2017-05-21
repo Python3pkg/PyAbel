@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
+
+
+
+
 
 from time import time
 import os.path
@@ -203,7 +203,7 @@ def _nbf_default(n_vert, n_horz, nbf):
         # nbf_vert = n_vert (if relevant)
         # nbf_horz = n_horz//2 + 1
         nbf = [n_vert, n_horz//2 + 1]
-    elif isinstance(nbf, (int, long)):
+    elif isinstance(nbf, int):
         if nbf != n_horz//2 + 1:
             print('Warning: the number of basis functions \
                     nbf = {} != (n//2 + 1)  = {}\n'.format(

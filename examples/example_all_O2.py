@@ -7,10 +7,10 @@
 # Note it transforms only the Q0 (top-right) quadrant
 # using the fundamental transform code
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
+
+
+
+
 
 import numpy as np
 import abel
@@ -34,7 +34,7 @@ transforms = {
 }
 # sort dictionary 
 transforms = collections.OrderedDict(sorted(transforms.items()))
-ntrans = np.size(transforms.keys())  # number of transforms
+ntrans = np.size(list(transforms.keys()))  # number of transforms
 
 
 # Image:   O2- VMI 1024x1024 pixel ------------------
@@ -64,7 +64,7 @@ iabelQ = []  # keep inverse Abel transformed image
 sp = []  # speed distributions
 meth = []  # methods
 
-for q, method in enumerate(transforms.keys()):
+for q, method in enumerate(list(transforms.keys())):
 
     Q0 = Q0fresh.copy()   # top-right quadrant of O2- image
 

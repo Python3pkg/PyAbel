@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
+
+
+
+
 
 import numpy as np
 import abel
@@ -82,9 +82,9 @@ class AbelTiming(object):
         # delete all keys not present in 'select' input parameter
         if "all" not in select:
             for trans in select:
-                if trans not in res['inverse'].keys():
+                if trans not in list(res['inverse'].keys()):
                     raise ValueError("'{}' is not a valid transform method".
-                                     format(trans), res['inverse'].keys())
+                                     format(trans), list(res['inverse'].keys()))
                      
             for direction in ['forward', 'inverse']:
                 rm = []
@@ -108,7 +108,7 @@ class AbelTiming(object):
            
             # basis set evaluation --------------
             basis = {}
-            for method in res['bs'].keys():
+            for method in list(res['bs'].keys()):
                 if method[:-3] == 'basex':  # special case
                     if ni <= n_max_bs:
                         # calculate and store basex basis matrix
@@ -128,8 +128,8 @@ class AbelTiming(object):
 
             # Abel transforms ---------------
             for cal in ["forward", "inverse"]:
-                for method in res[cal].keys(): 
-                    if method in basis.keys():
+                for method in list(res[cal].keys()): 
+                    if method in list(basis.keys()):
                         if basis[method][0] is not None:
                             # have basis calculation
                             res[cal][method].append(Timer(

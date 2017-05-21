@@ -22,7 +22,7 @@ def run_cli(coverage=False):
     But uses sys.exit(status) instead of simply returning the status.
     """
     status = run(coverage=coverage)
-    print('Exit status: {}'.format(status))
+    print(('Exit status: {}'.format(status)))
     sys.exit(status)
 
 

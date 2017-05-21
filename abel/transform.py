@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
+
+
+
+
 
 import numpy as np
 import time
@@ -457,7 +457,7 @@ class Transform(object):
             AQ3 = selected_transform(Q3)
 
         if self.method == "linbasex" and\
-           "return_Beta" in transform_options.keys():
+           "return_Beta" in list(transform_options.keys()):
             # linbasex evaluates speed and anisotropy parameters
             # AQi == AIM, R, Beta, QLz
             Beta0 = AQ0[2]

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
+
+
+
+
 
 import numpy as np
 from .math import fit_gaussian
@@ -308,7 +308,7 @@ def find_center_by_convolution(IM, **kwargs):
     # 10May16 - axes swapped - check this
     center = (np.argmax(conv_0)/2, np.argmax(conv_1)/2)
 
-    if "projections" in kwargs.keys():
+    if "projections" in list(kwargs.keys()):
         return center, conv_0, conv_1
     else:
         return center

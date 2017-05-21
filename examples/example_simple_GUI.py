@@ -11,8 +11,8 @@ from scipy.ndimage.interpolation import shift
 
 import sys
 if sys.version_info[0] < 3:
-    import Tkinter as tk
-    from tkFileDialog import askopenfilename
+    import tkinter as tk
+    from tkinter.filedialog import askopenfilename
 else:
     import tkinter as tk
     from tkinter.filedialog import askopenfilename

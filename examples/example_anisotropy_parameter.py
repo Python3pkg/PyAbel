@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
+
+
+
 
 import numpy as np
 import abel
@@ -18,7 +18,7 @@ IM = np.loadtxt("data/O2-ANU1024.txt.bz2")
 
 # === linbasex transform ===================================
 legendre_orders = [0, 2, 4]  # Legendre polynomial orders
-proj_angles = range(0, 180, 10)  # projection angles in 10 degree steps
+proj_angles = list(range(0, 180, 10))  # projection angles in 10 degree steps
 radial_step = 1  # pixel grid
 smoothing = 0.9  # smoothing 1/e-width for Gaussian convolution smoothing
 threshold = 0.2  # threshold for normalization of higher order Newton spheres
